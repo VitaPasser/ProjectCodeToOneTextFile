@@ -5,7 +5,7 @@ import os.path
 config = configparser.ConfigParser()
 config.read('settings.ini')
 
-txt_ext: list[str] = ['ts', 'tsx', 'css', 'json', 'mjs']
+txt_ext: list[str] = json.loads(config['PROJECT']['EXTENSIONS_FILES'])
 exclude: list[str] = json.loads(config['PROJECT']['EXCLUDE'])
 
 def get_content_from_files(path, here_path='./'):
